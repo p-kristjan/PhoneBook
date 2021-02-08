@@ -1,0 +1,23 @@
+<%- include('includes/head.ejs'); %>
+
+<header class="main-header">
+    <h1>#contact_list</h1>
+</header>
+
+<main>
+    <% for(let i = 0; i < contactItems.length; i++) { %>
+        <form class="form" action="/delete-contact" method="POST">
+            <div class="item" class="form-control">
+                <!--<input name="checkbox" value="<%= contactItems[i].id %>" type="checkbox" onchange="this.form.submit()">-->
+                <input type="text" name="firstName" value=<%= contactItems[i].firstName %> disabled>
+            </div>
+        </form>
+    <% } %>
+    <form method="POST">
+    <button class="btn">add</button>
+    </form>
+</main>
+
+
+    
+<%- include('includes/footer.ejs'); %>

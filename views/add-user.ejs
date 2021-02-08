@@ -1,0 +1,21 @@
+<%- include('includes/head.ejs'); %>
+
+<header class="main-header">
+    <h1>#add_contact</h1>
+</header>
+
+<main>
+    <form class="form" action="/add-user" method="POST">
+        <div class="form-control">
+            <label for="firstName">first name</label>
+            <input type="text" name="firstName" placeholder="John">
+            <label for="lastName">last name</label>
+            <input type="text" name="lastName" placeholder="Doe">
+            <label for="phoneNumber">phone number</label>
+            <input type="text" name="phoneNumber" placeholder="+372 5555 4444">
+        </div>
+        <button class="btn" type="submit">submit</button>
+    </form>
+</main>
+
+<%- include('includes/footer.ejs'); %>
