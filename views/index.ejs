@@ -7,14 +7,18 @@
 <main>
     <% for(let i = 0; i < contactItems.length; i++) { %>
         <form class="form" action="/delete-contact" method="POST">
-            <div class="item" class="form-control">
+            <div class="item formcontrol flex">
                 <!--<input name="checkbox" value="<%= contactItems[i].id %>" type="checkbox" onchange="this.form.submit()">-->
-                <input type="text" name="firstName" value=<%= contactItems[i].firstName %> disabled>
+                <input class="txtinput disabled" disabled="disabled" type="text" name="firstName" value="<%= contactItemsArray[i] %>">
+                <input type="hidden" value="<%= contactItems[i].id %>" name="contactId">
+                <button type="submit" class="deleteButton">
+                    <i class="fas fa-trash delete-icon fa-2x" ></i>
+                </button>
             </div>
         </form>
     <% } %>
-    <form method="POST">
-    <button class="btn">add</button>
+    <form action="/add-user">
+        <button class="btn">add</button>
     </form>
 </main>
 

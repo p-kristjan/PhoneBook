@@ -34,19 +34,34 @@ main {
     margin: auto;
 }
 
-.form-control {
+.deleteButton{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+}
+
+.formcontrol {
     margin: 1rem 0;
 }
 
-.form-control label,
-.form-control input {
+.flex{
+    display: flex;
+}
+
+.formcontrol label,
+.txtinput {
     display: block;
     width: 100%;
     margin-bottom: 0.25rem;
 }
 
 
-.form-control input {
+.txtinput {
     border: none;
     font: inherit;
     border-radius: 2px;
@@ -56,8 +71,13 @@ main {
     margin-bottom: 1rem;
 }
 
-.form-control input:focus {
+.txtinput:focus {
     outline-color: #007acc;
+}
+
+.disabled {
+    text-align: center;
+    margin-top: 0.8rem;
 }
 
 .btn {
@@ -65,14 +85,14 @@ main {
     border: none;
     color: #41444b;
     background: #b9bbbe;
-    border-radius: 3px;
+    border-radius: 30px;
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
     display: block;
     margin: 0 auto;
-    margin-top: 3rem;
-    padding: 0.6rem;
+    margin-top: 2rem;
+    padding: 0.5rem 2rem;
 }
   
 .btn:hover,

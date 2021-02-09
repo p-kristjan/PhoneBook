@@ -4,7 +4,13 @@ const Contact = mongoose.model('Contact');
 exports.getMainPage = (req, res)=> {
     Contact.find((error, contacts) => {
         if(!error){
+            const cont = [];
+            contacts.forEach(item => {
+                const personString = `${item.firstName} ${item.lastName} (${item.phoneNumber})`;
+                cont.push(personString);
+            });
             res.render('index.ejs', {
+                contactItemsArray: cont,
                 contactItems: contacts
             })
         } else {
@@ -18,8 +24,6 @@ exports.getAddUserPage = (req, res) => {
 }
 
 exports.postnewContact = (req, res) => {
-    console.log("!!!");
-
     let firstName = req.body.firstName;
     let lastName = req.body.lastName;
     let phoneNumber = req.body.phoneNumber;
@@ -40,8 +44,8 @@ exports.postnewContact = (req, res) => {
 }
 
 exports.deleteContact = (req, res) => {
-    const checkedContactId = req.body.checkbox;
-    Contact.findByIdAndRemove(checkedContactId, (error) =>{
+    const contactId = req.body.contactId;
+    Contact.findByIdAndRemove(contactId, (error) =>{
         if(!error){
             res.redirect('/');
         } else {
